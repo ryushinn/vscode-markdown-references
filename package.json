@@ -1,12 +1,12 @@
 {
   "name": "markdown-references",
   "displayName": "Markdown References",
-  "description": "extend VSCode markdown-it parser with the pandoc-style citations/bibliography and the cross-ref syntax",
+  "description": "This plugin extends VSCode markdown-it parser with the pandoc-style citations/bibliography and the cross-ref syntax",
   "version": "0.1.0",
   "publisher": "ryushinn",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryushinn/vscode-markdown-academic-notes"
+    "url": "https://github.com/ryushinn/vscode-markdown-references"
   },
   "engines": {
     "vscode": "^1.74.0"

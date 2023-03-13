@@ -1,1 +1,1 @@
-# vscode-markdown-academic-notes
+# vscode-markdown-references
