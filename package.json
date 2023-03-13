@@ -1,0 +1,67 @@
+{
+  "name": "markdown-references",
+  "displayName": "Markdown References",
+  "description": "extend VSCode markdown-it parser with the pandoc-style citations/bibliography and the cross-ref syntax",
+  "version": "0.1.0",
+  "publisher": "ryushinn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryushinn/vscode-markdown-academic-notes"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "configuration": {
+      "title": "Markdown References",
+      "properties": {
+        "bibliography.bibPath": {
+          "type": "string",
+          "default": "$WSDirectory/example.bib",
+          "description": "The path to the biblatex file. '$WSDirectory' can be used to indicate the root path of the first workspace (Same as other configs). As an example, $WSDirectory/examples.bib will be parsed as /foo/examples.bib for the workspace located at /foo."
+        },
+        "bibliography.localePath": {
+          "type": "string",
+          "default": "",
+          "description": "The path to the locale file. If not specified, the default locale (en-US) setting will be used."
+        },
+        "bibliography.cslPath": {
+          "type": "string",
+          "default": "",
+          "description": "The path to the csl file. If not specified, the default style (apa-6th-edition) will be used."
+        },
+        "crossref.listOfFigures": {
+          "type": "boolean",
+          "default": false,
+          "description": "specifies whether to print an extra section of the list of figures in the end"
+        },
+        "crossref.listOfTables": {
+          "type": "boolean",
+          "default": false,
+          "description": "specifies whether to print an extra section of the list of tables in the end"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.73.0",
+    "@types/node": "^7.0.43",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@arothuis/markdown-it-biblatex": "^1.0.0",
+    "markdown-it-references": "^2.1.0-alpha.3",
+    "markdown-it-figure-references": "^2.1.0-alpha.3",
+    "markdown-it-table-references": "^2.1.0-alpha.3"
+  }
+}
